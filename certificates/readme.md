@@ -29,7 +29,7 @@ The winner was placed on an advertising banner.
 
 <img src="https://github.com/boramorka/usercontent/blob/main/certificates/content/HSE%20scoring%20project.jpg?raw=true" width="500">
 <br>
-(2019) <br> During my studies in cooperation with Sber <br> I implemented a project to build a model for calculating <br> the risks of corporate borrowers of large business. <br> The financial statements of the companies were launched into <br> the developed model and triggers were identified by which it was <br> possible to judge which companies would soon go bankrupt. <br> A full-fledged scoring model has been developed that <br> is applicable to the area of corporate banking.
+(2019)  During my studies in cooperation with Sber  I implemented a project to build a model for calculating  the risks of corporate borrowers of large business.  The financial statements of the companies were launched into  the developed model and triggers were identified by which it was  possible to judge which companies would soon go bankrupt.  A full-fledged scoring model has been developed that  is applicable to the area of corporate banking.
 </center>
 
 # Degrees
