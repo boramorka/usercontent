@@ -5,9 +5,9 @@
 </center>
 
 ## Table of Contents
-1. [Competetitions](#example) • [Python Developer Megafon Competition](#megafon-competition) • [SBER Competition](#sber-competition)
+1. [Competetitions](#competitions) • [Python Developer Megafon Competition](#megafon-competition) • [SBER Competition](#sber-competition)
 
-2. [Degrees](#example2) • [Postgraduate Data Scientist Diploma](#postgraduate-data-scientist-diploma) • [Master's Degree Diploma](#masters-degree-eu-diploma) • [Bachelors's Degree Diploma](#bachelors-degree-ru-diploma)
+2. [Degrees](#degrees) • [Postgraduate Data Scientist Diploma](#postgraduate-data-scientist-diploma) • [Master's Degree Diploma](#masters-degree-eu-diploma) • [Bachelors's Degree Diploma](#bachelors-degree-ru-diploma)
 
 3. [Certificates](#certificates) • [PySpark](#pyspark) • [Alghorithms](#alghorithms) • [Python](#python) • [SQL](#sql) • [Data Science](#data-science) • [Machine Learning](#machine-learning) • [AI](#ai) • [R](#r) • [Extras](#extras)
 
