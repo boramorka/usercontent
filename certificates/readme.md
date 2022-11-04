@@ -68,8 +68,6 @@ Minors: <br> - Data mining <br> - Neural Networks <br> - Software Engineering
 # Certificates
 <center>
 
-<img src="" width="700">
-
 ## PySpark
 
 <img src="https://github.com/boramorka/usercontent/blob/main/certificates/content/PySpark%20Cert.jpg?raw=true" width="700">
@@ -100,8 +98,6 @@ Minors: <br> - Data mining <br> - Neural Networks <br> - Software Engineering
 <img src="https://github.com/boramorka/usercontent/blob/main/certificates/content/DataCamp%20Pandas.jpg?raw=true" width="700">
 
 <img src="https://github.com/boramorka/usercontent/blob/main/certificates/content/SBER%20Python%20DA.jpg?raw=true" width="700">
-
-<img src="" width="700">
 
 ## Machine Learning
 
