@@ -1,11 +1,13 @@
+# Kaggle Tasks 1-100 with Solutions
+
 ## 1. Two Sum E
 
 
-Учитывая массив целых чисел nums и целочисленное целевое значение, верните индексы двух чисел так, чтобы в сумме они составляли целевое значение.
+Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 
-Вы можете предположить, что каждый вход будет иметь ровно одно решение, и вы не можете использовать один и тот же элемент дважды.
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
 
-Вы можете вернуть ответ в любом порядке.
+You can return the answer in any order.
 
 
 ```python
@@ -37,9 +39,9 @@ def twoSum(self, nums: List[int], target: int) -> List[int]:
 
 <img src = "https://assets.leetcode.com/uploads/2020/10/02/addtwonumber1.jpg">
 
-Вам даны два непустых связанных списка, представляющих два неотрицательных целых числа. Цифры хранятся в обратном порядке, и каждый из их узлов содержит одну цифру. Сложите два числа и верните сумму в виде связанного списка.
+You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
 
-Вы можете предположить, что эти два числа не содержат начальных нулей, кроме самого числа 0.
+You may assume the two numbers do not contain any leading zero, except the number 0 itself.
 
 
 ```python
@@ -73,7 +75,7 @@ class Solution:
 ## 3. Longest Substring Without Repeating Characters M
 
 
-Для заданной строки s найдите длину самой длинной подстроки без повторяющихся символов.
+Given a string s, find the length of the longest substring without repeating characters.
 
 
 
@@ -116,9 +118,11 @@ class Solution:
 ## 4. Median of Two Sorted Arrays H
 
 
-Учитывая два отсортированных массива nums1 и nums2 размера m и n соответственно, вернуть медиану двух отсортированных массивов.
+Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
 
-Общая сложность времени выполнения должна быть O(log (m+n)).
+The overall run time complexity should be O(log (m+n)).
+
+
 
 
 ```python
@@ -147,7 +151,7 @@ class Solution:
 ## 5. Longest Palindromic Substring M
 
 
-Учитывая строку s, вернуть самую длинную палиндромную подстроку в s.
+Given a string s, return the longest palindromic substring in s.
 
 
 
@@ -179,15 +183,14 @@ class Solution:
 ## 6. Zigzag Conversion M
 
 
-Строка «PAYPALISHIRING» записывается зигзагообразным узором в заданном количестве строк, например так: (вы можете отобразить этот узор фиксированным шрифтом для лучшей читаемости)
+The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
 
 P   A   H   N
 A P L S I I G
 Y   I   R
+And then read line by line: "PAHNAPLSIIGYIR"
 
-А потом читать построчно: "ПАХНАПЛСИИГЙИР"
-
-Напишите код, который будет принимать строку и выполнять это преобразование с заданным количеством строк:
+Write the code that will take a string and make this conversion given a number of rows:
 
 string convert(string s, int numRows);
 
@@ -227,6 +230,10 @@ class Solution:
 
 ## 7. Reverse Integer M
 
+Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-2^31, 2^31 - 1], then return 0.
+
+Assume the environment does not allow you to store 64-bit integers (signed or unsigned).
+
 ```python
 Example 1:
 
@@ -252,20 +259,20 @@ class Solution:
 ## 8. String to Integer (atoi) M 
 
 
-реализовать функцию myAtoi(string s), которая преобразует строку в 32-битное целое число со знаком (аналогично функции atoi C/C++).
+Implement the myAtoi(string s) function, which converts a string to a 32-bit signed integer (similar to C/C++'s atoi function).
 
-Алгоритм для myAtoi(string s) следующий:
+The algorithm for myAtoi(string s) is as follows:
 
-Прочтите и игнорируйте начальные пробелы.
-Проверьте, является ли следующий символ (если он еще не находится в конце строки) «-» или «+». Прочтите этот символ, если он есть. Это определяет, будет ли окончательный результат отрицательным или положительным соответственно. Предположим, что результат положительный, если ни один из них не присутствует.
-Считайте следующие символы, пока не будет достигнут следующий нецифровой символ или конец ввода. Остальная часть строки игнорируется.
-Преобразуйте эти цифры в целое число (например, «123» -> 123, «0032» -> 32). Если цифры не были прочитаны, то целое число равно 0. При необходимости измените знак (из шага 2).
-Если целое число выходит за пределы диапазона 32-битных целых чисел со знаком [-231, 231 - 1], зафиксируйте целое число, чтобы оно оставалось в диапазоне. В частности, целые числа меньше -231 должны быть сжаты до -231, а целые числа больше 231-1 должны быть сжаты до 231-1.
-Возвращает целое число в качестве окончательного результата.
-Примечание:
+Read in and ignore any leading whitespace.
+Check if the next character (if not already at the end of the string) is '-' or '+'. Read this character in if it is either. This determines if the final result is negative or positive respectively. Assume the result is positive if neither is present.
+Read in next the characters until the next non-digit character or the end of the input is reached. The rest of the string is ignored.
+Convert these digits into an integer (i.e. "123" -> 123, "0032" -> 32). If no digits were read, then the integer is 0. Change the sign as necessary (from step 2).
+If the integer is out of the 32-bit signed integer range [-231, 231 - 1], then clamp the integer so that it remains in the range. Specifically, integers less than -231 should be clamped to -231, and integers greater than 231 - 1 should be clamped to 231 - 1.
+Return the integer as the final result.
+Note:
 
-Только символ пробела ' ' считается символом пробела.
-Не игнорируйте никакие символы, кроме начального пробела или остальной части строки после цифр.
+Only the space character ' ' is considered a whitespace character.
+Do not ignore any characters other than the leading whitespace or the rest of the string after the digits.
 
 
 ```python
@@ -321,7 +328,7 @@ class Solution:
 ## 9. Palindrome Number E
 
 
-Учитывая целое число x, вернуть true, если x является палиндромом, и false в противном случае.
+Given an integer x, return true if x is a palindrome, and false otherwise.
 
 
 ```python
@@ -352,11 +359,11 @@ class Solution:
 ## 10. Regular Expression Matching H
 
 
-Имея входную строку s и шаблон p, реализуйте сопоставление регулярных выражений с поддержкой '.' и где:
+Given an input string s and a pattern p, implement regular expression matching with support for '.' and '*' where:
 
-'.' Соответствует любому одиночному символу.
-'*' Соответствует нулю или более предшествующих элементов.
-Сопоставление должно охватывать всю входную строку (не частичную).
+'.' Matches any single character.​​​​
+'*' Matches zero or more of the preceding element.
+The matching should cover the entire input string (not partial).
 
 
 ```python
@@ -389,13 +396,13 @@ class Solution:
 <img src="https://s3-lc-upload.s3.amazonaws.com/uploads/2018/07/17/question_11.jpg">
 
 
-Вам дан целочисленный массив высоты длины n. Нарисовано n вертикальных линий, две конечные точки i-й линии равны (i, 0) и (i, height[i]).
+You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]).
 
-Найдите две линии, которые вместе с осью абсцисс образуют контейнер, содержащий наибольшее количество воды.
+Find two lines that together with the x-axis form a container, such that the container contains the most water.
 
-Возвращает максимальное количество воды, которое может храниться в контейнере.
+Return the maximum amount of water a container can store.
 
-Обратите внимание, что вы не можете наклонять контейнер.
+Notice that you may not slant the container.
 
 
 ```python
@@ -425,7 +432,7 @@ class Solution:
 ## 12. Integer to Roman M
 
 
-Римские цифры представлены семью различными символами: I, V, X, L, C, D и M.
+Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
 
 Symbol       Value
 I             1
@@ -435,15 +442,14 @@ L             50
 C             100
 D             500
 M             1000
+For example, 2 is written as II in Roman numeral, just two one's added together. 12 is written as XII, which is simply X + II. The number 27 is written as XXVII, which is XX + V + II.
 
-Например, 2 записывается как II римскими цифрами, просто две единицы сложены вместе. 12 записывается как XII, то есть просто X + II. Число 27 записывается как XXVII, то есть XX + V + II.
+Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:
 
-Римские цифры обычно пишутся слева направо от большего к меньшему. Однако цифра четыре не IIII. Вместо этого цифра четыре пишется как IV. Так как единица предшествует пятерке, мы вычитаем ее и получаем четыре. Тот же принцип применим к числу девять, которое пишется как IX. Есть шесть случаев, когда используется вычитание:
-
-I можно поставить перед V (5) и X (10), чтобы получились 4 и 9.
-X можно поставить перед L (50) и C (100), чтобы получилось 40 и 90.
-C можно поставить перед D (500) и M (1000), чтобы получились 400 и 900.
-Дано целое число, преобразовать его в римскую цифру.
+I can be placed before V (5) and X (10) to make 4 and 9. 
+X can be placed before L (50) and C (100) to make 40 and 90. 
+C can be placed before D (500) and M (1000) to make 400 and 900.
+Given an integer, convert it to a roman numeral.
 
 
 ```python
@@ -481,7 +487,7 @@ class Solution:
 ## 13. Roman to Integer E
 
 
-Римские цифры представлены семью различными символами: I, V, X, L, C, D и M.
+Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
 
 Symbol       Value
 I             1
@@ -491,15 +497,14 @@ L             50
 C             100
 D             500
 M             1000
+For example, 2 is written as II in Roman numeral, just two ones added together. 12 is written as XII, which is simply X + II. The number 27 is written as XXVII, which is XX + V + II.
 
-Например, 2 записывается как II римскими цифрами, всего две единицы, сложенные вместе. 12 записывается как XII, то есть просто X + II. Число 27 записывается как XXVII, то есть XX + V + II.
+Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:
 
-Римские цифры обычно пишутся слева направо от большего к меньшему. Однако цифра четыре не IIII. Вместо этого цифра четыре пишется как IV. Так как единица предшествует пятерке, мы вычитаем ее и получаем четыре. Тот же принцип применим к числу девять, которое пишется как IX. Есть шесть случаев, когда используется вычитание:
-
-I можно поставить перед V (5) и X (10), чтобы получились 4 и 9.
-X можно поставить перед L (50) и C (100), чтобы получилось 40 и 90.
-C можно поставить перед D (500) и M (1000), чтобы получились 400 и 900.
-Дана римская цифра, преобразовать ее в целое число.
+I can be placed before V (5) and X (10) to make 4 and 9. 
+X can be placed before L (50) and C (100) to make 40 and 90. 
+C can be placed before D (500) and M (1000) to make 400 and 900.
+Given a roman numeral, convert it to an integer.
 
 
 ```python
@@ -537,9 +542,9 @@ class Solution:
 ## 14. Longest Common Prefix E
 
 
-Напишите функцию, которая находит самую длинную строку общего префикса среди массива строк.
+Write a function to find the longest common prefix string amongst an array of strings.
 
-Если общего префикса нет, вернуть пустую строку "".
+If there is no common prefix, return an empty string "".
 
 
 ```python
@@ -567,9 +572,9 @@ class Solution:
 ## 15. 3Sum M
 
 
-Для массива целых чисел nums вернуть все триплеты [nums[i], nums[j], nums[k]] такие, что i != j, i != k и j != k, и nums[i] + числа [j] + числа [k] == 0.
+Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
 
-Обратите внимание, что в наборе решений не должно быть повторяющихся триплетов.
+Notice that the solution set must not contain duplicate triplets.
 
 
 ```python
@@ -739,6 +744,7 @@ class Solution:
 Given the head of a linked list, remove the nth node from the end of the list and return its head.
 
 <img src = "https://assets.leetcode.com/uploads/2020/10/03/remove_ex1.jpg">
+
 ```python
 Example 1:
 
@@ -822,6 +828,7 @@ Merge the two lists in a one sorted list. The list should be made by splicing to
 Return the head of the merged linked list.
 
 <img src = "https://assets.leetcode.com/uploads/2020/10/03/merge_ex1.jpg">
+
 ```python
 Example 1:
 
@@ -2049,7 +2056,22 @@ Output: [["Q"]]
 ```
 
 ```python
-
+class Solution:
+    def solveNQueens(self, n):
+        res = []
+        def dfs(i, l, r, m, arr):
+            if i == n:
+                res.append(arr)
+            else:
+                l = l[1:] + [0]
+                r = [0] + r[:-1]
+                for j in range(n):
+                    if m[j] == l[j] == r[j] == 0:
+                        l[j] = r[j] = m[j] = 1 
+                        dfs(i + 1, l, r, m, arr + [("." * j) + "Q" + ("." * (n - j - 1))])
+                        l[j] = r[j] = m[j] = 0
+        dfs(0, [0] * n, [0] * n, [0] * n, [])
+        return res
 ```
 
 ## 52. N-Queens II H
@@ -2071,7 +2093,22 @@ Output: 1
 ```
 
 ```python
-
+class Solution:
+    def totalNQueens(self, n):
+        res = [0] 
+        def dfs(i, l, r, m):
+            if i == n: 
+                res[0] += 1
+            else:
+                l = l[1:] + [0]
+                r = [0] + r[:-1]
+                for j in range(n):
+                    if m[j] == l[j] == r[j] == 0:
+                        l[j] = r[j] = m[j] = 1 
+                        dfs(i + 1, l, r, m)
+                        l[j] = r[j] = m[j] = 0
+        dfs(0, [0] * n, [0] * n, [0] * n)
+        return res[0]
 ```
 
 ## 53. Maximum Subarray
@@ -2095,7 +2132,13 @@ Output: 23
 ```
 
 ```python
-
+class Solution:
+    def maxSubArray(self, nums):
+        sm, mn, mx = 0, 0, -float("inf")
+        for num in nums:
+            sm += num
+            mx, mn = max(mx, sm - mn), min(mn, sm)
+        return mx
 ```
 
 ## 54. Spiral Matrix M
@@ -2115,7 +2158,38 @@ Output: [1,2,3,4,8,12,11,10,9,5,6,7]
 ```
 
 ```python
-
+class Solution:
+    def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
+        res = []
+        seen = set()
+        def dfs(i, j, d):
+            seen.add((i, j))
+            res.append(matrix[i][j])
+            if d == 'r':
+                if j + 1 < n and (i, j + 1) not in seen:
+                    dfs(i, j + 1, d)
+                elif i + 1 < m and (i + 1, j) not in seen:
+                    dfs(i + 1, j , 'd')
+            elif d == 'd':
+                if i + 1 < m and (i + 1, j) not in seen:
+                    dfs(i + 1, j , d)
+                elif j and (i, j - 1) not in seen:
+                    dfs(i, j - 1, 'l')
+            elif d == 'l':
+                if j and (i, j - 1) not in seen:
+                    dfs(i, j - 1, d)
+                elif i and (i - 1, j) not in seen:
+                    dfs(i - 1, j, 'u')
+            else:
+                if i and (i - 1, j) not in seen:
+                    dfs(i - 1, j, d)
+                elif j + 1 < n and (i, j + 1) not in seen:
+                    dfs(i, j + 1, 'r')
+        if not matrix: return []
+        m, n = len(matrix), len(matrix[0])
+        dfs(0, 0, 'r')
+        return res
+        
 ```
 
 ## 55. Jump Game M
@@ -2138,7 +2212,17 @@ Explanation: You will always arrive at index 3 no matter what. Its maximum jump 
 ```
 
 ```python
-
+class Solution:
+    def canJump(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
+        i = mx = 0
+        while i < len(nums) and i <= mx:
+            if nums[i] + i >= len(nums) - 1: return True
+            mx, i = max(mx, i + nums[i]), i + 1
+        return False
 ```
 
 ## 56. Merge Intervals M
@@ -2159,7 +2243,29 @@ Explanation: Intervals [1,4] and [4,5] are considered overlapping.
 ```
 
 ```python
+# Definition for an interval.
+# class Interval:
+#     def __init__(self, s=0, e=0):
+#         self.start = s
+#         self.end = e
 
+class Solution:
+    def merge(self, intervals):
+        """
+        :type intervals: List[Interval]
+        :rtype: List[Interval]
+        """
+        res = []
+        intervals.sort(key = lambda x: x.end)
+        for intr in intervals:
+            if not re:
+                res.append([intr.start, intr.end])
+            else:
+                s = intr.start
+                while res and res[-1][1] >= intr.start:
+                    s = min(s, res.pop()[0])
+                res.append([s, intr.end])
+        return res
 ```
 
 ## 57. Insert Interval M
@@ -2183,7 +2289,19 @@ Explanation: Because the new interval [4,8] overlaps with [3,5],[6,7],[8,10].
 ```
 
 ```python
-
+class Solution:
+    def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
+        new, i = [], 0
+        for i, it in enumerate(intervals):
+            if newInterval[1] < it[0]: 
+                i -= 1
+                break
+            elif it[1] < newInterval[0]: 
+                new += it,
+            else: 
+                newInterval[0], newInterval[1] = min(it[0], newInterval[0]), max(it[1], newInterval[1])
+        return new + [newInterval] + intervals[i + 1:]
+        
 ```
 
 ## 58. Length of Last Word E
@@ -2211,7 +2329,27 @@ Explanation: The last word is "joyboy" with length 6.
 ```
 
 ```python
-
+class Solution:
+    def lengthOfLastWord(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        if len(s)==0:
+            return 0
+        count=0
+        prev_count=0
+        for letter in s:
+            if count>0:
+                prev_count=count
+            if letter==" ":
+                count=0
+                continue
+            count+=1
+        if count>0:
+            return count
+        else:
+            return prev_count
 ```
 
 ## 59. Spiral Matrix II M
@@ -2232,7 +2370,24 @@ Output: [[1]]
 ```
 
 ```python
-
+class Solution:
+    def generateMatrix(self, n):
+        """
+        :type n: int
+        :rtype: List[List[int]]
+        """
+        def dirToIndex(x, y, d):
+            if d == "r": return (x, y + 1, d) if y + 1 < n and matrix[x][y + 1] == 0 else (x + 1, y, "d")
+            elif d == "d": return (x + 1, y, d) if x + 1 < n and matrix[x + 1][y] == 0 else (x, y - 1, "l")
+            elif d == "l": return (x, y - 1, d) if y > 0 and matrix[x][y - 1] == 0 else (x - 1, y, "u")
+            else: return (x - 1, y, d) if x > 0 and matrix[x - 1][y] == 0 else (x, y +1, "r")
+        matrix = [[0 for i in range(1, n + 1)] for j in range(n)]
+        num, dir, i, j = 1, "r", 0, 0
+        while 0 <= i < n and 0 <= j < n and matrix[i][j] == 0:
+            matrix[i][j] = num
+            num += 1
+            i, j, dir = dirToIndex(i, j, dir)
+        return matrix        
 ```
 
 ## 60. Permutation Sequence H
@@ -2265,7 +2420,12 @@ Output: "123"
 ```
 
 ```python
-
+class Solution:
+    def getPermutation(self, n, k):
+        p = itertools.permutations(range(1, n + 1))
+        for i in range(k): 
+            res = next(p)
+        return ''.join([str(i) for i in res])
 ```
 
 ## 61. Rotate List M
@@ -2287,7 +2447,23 @@ Output: [2,0,1]
 ```
 
 ```python
-
+class Solution:
+    def rotateRight(self, head, k):
+        arr, count = [head], 0
+        root = last = head
+        while last and last.next and count < k:
+            last, count = last.next, count+1
+            arr.append(last)
+        if k != count: 
+            k = k % (count+1)
+            last = arr[k]
+        if k == 0 or not last: 
+            return head
+        curr = root
+        while last.next:
+            last, curr = last.next, curr.next
+        last.next, curr.next, start = root, None, curr.next
+        return start
 ```
 
 ## 62. Unique Paths M
@@ -2316,7 +2492,17 @@ Explanation: From the top-left corner, there are a total of 3 ways to reach the 
 ```
 
 ```python
-
+class Solution:
+    def uniquePaths(self, m: int, n: int) -> int:
+        dp = [[0] * m for _ in range(n)]
+        dp[0][0] = 1
+        for i in range(n):
+            for j in range(m):
+                if i - 1 >= 0:
+                    dp[i][j] += dp[i - 1][j]
+                if j - 1 >= 0:
+                    dp[i][j] += dp[i][j - 1]
+        return dp[-1][-1]
 ```
 
 ## 63. Unique Paths II M
@@ -2346,7 +2532,18 @@ Output: 1
 ```
 
 ```python
-
+class Solution:
+    def uniquePathsWithObstacles(self, obstacleGrid):
+        if obstacleGrid[0][0] == 1: return 0
+        for i in range(len(obstacleGrid)):
+            for j in range(len(obstacleGrid[0])): 
+                if obstacleGrid[i][j] == 1 or i == j == 0:
+                    obstacleGrid[i][j] -= 1
+                else:
+                    add1 = obstacleGrid[i - 1][j] if i > 0 else 0
+                    add2 = obstacleGrid[i][j - 1] if j > 0 else 0
+                    obstacleGrid[i][j] += add1 + add2
+        return abs(obstacleGrid[-1][-1])
 ```
 
 ## 64. Minimum Path Sum M
@@ -2370,7 +2567,16 @@ Output: 12
 ```
 
 ```python
-
+class Solution:
+    def minPathSum(self, grid):
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
+        for i in range(len(grid)):
+            for j in range(len(grid[0])):
+                grid[i][j] += min(grid[i][j - 1] if j > 0 else float("inf"), grid[i - 1][j] if i > 0 else float("inf")) if i!=0 or j != 0 else 0
+        return grid[-1][-1]
 ```
 
 ## 65. Valid Number
@@ -2410,7 +2616,29 @@ Output: false
 ```
 
 ```python
-
+class Solution:
+    def isNumber(self, s):
+        s = s.strip()
+        pointSeen = eSeen = numberSeen = False
+        numberAfterE = True
+        for i, c in enumerate(s):
+            if "0" <= c <= "9":
+                numberSeen = numberAfterE = True
+            elif c == ".":
+                if eSeen or pointSeen:
+                    return False
+                pointSeen = True
+            elif c == "e":
+                if eSeen or not numberSeen:
+                    return False
+                numberAfterE = False
+                eSeen = True
+            elif c in "-+":
+                if i and s[i - 1] != "e":
+                    return False
+            else:
+                return False
+        return numberSeen and numberAfterE
 ```
 
 ## 66. Plus One E
@@ -2444,7 +2672,9 @@ Thus, the result should be [1,0].
 ```
 
 ```python
-
+class Solution:
+    def plusOne(self, digits, add = 1):
+        return add and [1] or [] if not digits else self.plusOne(digits[:-1], +(digits[-1] + add > 9)) + [(digits[-1] + add) % 10]
 ```
 
 ## 67. Add Binary
@@ -2463,7 +2693,9 @@ Output: "10101"
 ```
 
 ```python
-
+class Solution:
+    def addBinary(self, a: str, b: str) -> str:
+        return bin(int(a, 2) + int(b, 2))[2:]
 ```
 
 ## 68. Text Justification
@@ -2518,7 +2750,21 @@ Output:
 ```
 
 ```python
-
+class Solution:
+    def fullJustify(self, words: List[str], maxWidth: int) -> List[str]:
+        res, used, s = [], 0, []
+        for i, w in enumerate(words):
+            if not s or len(w) + used + len(s) <= maxWidth:
+                used += len(w)
+                s += [w]
+            else:
+                if len(s) == 1:
+                    res.append(s[0] + (maxWidth - used) * ' ')
+                else:
+                    br = (maxWidth - used) // (len(s) - 1)
+                    res.append(''.join((br + (i <= (maxWidth - used) % (len(s) - 1))) * ' ' + c for i, c in enumerate(s)).lstrip())
+                used, s = len(w), [w]
+        return res + [' '.join(c for c in s) + (maxWidth - used - len(s) + 1) * ' ']
 ```
 
 ## 69. Sqrt(x) E
@@ -2543,7 +2789,16 @@ Explanation: The square root of 8 is 2.82842..., and since we round it down to t
 ```
 
 ```python
-
+class Solution:
+    def mySqrt(self, x: int) -> int:
+        l, r = 0, x
+        while l <= r:
+            mid = (l + r) // 2
+            if mid * mid <= x:
+                l = mid + 1
+            else:
+                r = mid - 1
+        return l - 1
 ```
 
 ## 70. Climbing Stairs E
@@ -2571,7 +2826,15 @@ Explanation: There are three ways to climb to the top.
 ```
 
 ```python
-
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        memo = {}
+        def dfs(i):
+            if i >= n: return 1 if i == n else 0
+            if i not in memo:
+                memo[i] = dfs(i + 1) + dfs(i + 2)
+            return memo[i]
+        return dfs(0)
 ```
 
 ## 71. Simplify Path
@@ -2607,7 +2870,12 @@ Explanation: In the canonical path, multiple consecutive slashes are replaced by
 ```
 
 ```python
-
+class Solution:
+    def simplifyPath(self, path):
+        stack = [] 
+        for c in path.split("/"):
+            stack = stack[:-1] if c== ".." else stack + [c] if c and c != "." else stack
+        return "/" + "/".join(stack)
 ```
 
 ## 72. Edit Distance H
@@ -2643,7 +2911,18 @@ exection -> execution (insert 'u')
 ```
 
 ```python
-
+class Solution:
+    def minDistance(self, w1: str, w2: str) -> int:
+        dp = [[0] * (len(w2) + 1) for i in range(len(w1) + 1)]
+        for i in range(len(w1) + 1):
+            for j in range(len(w2) + 1):
+                if not (i and j):
+                    dp[i][j] = i or j
+                elif w1[i - 1] == w2[j - 1]:
+                    dp[i][j] += dp[i - 1][j - 1]
+                else:
+                    dp[i][j] += min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]) + 1
+        return dp[-1][-1]
 ```
 
 ## 73. Set Matrix Zeroes M
@@ -2665,7 +2944,22 @@ Output: [[0,0,0,0],[0,4,5,0],[0,3,1,0]]
 ```
 
 ```python
-
+class Solution:
+    def setZeroes(self, matrix):
+        m, n, x = len(matrix), len(matrix and matrix[0]), 0
+        for i in range(m):
+            for j in range(n):
+                if i < m - 1 and not matrix[i][j] and matrix[i + 1][j]: matrix[i + 1][j] = None
+        for i in range(m - 1, -1, -1):
+            for j in range(n - 1, -1, -1):
+                if i > 0 and not matrix[i][j] and matrix[i - 1][j]: matrix[i - 1][j] = None
+        while x < m:
+            y = 0
+            while y < n:
+                if matrix[x][y] == 0: matrix[x], y = [0] * n, n 
+                elif not matrix[x][y]: matrix[x][y] = 0
+                y += 1 
+            x += 1 
 ```
 
 
@@ -2689,7 +2983,10 @@ Output: false
 ```
 
 ```python
-
+class Solution:
+    def searchMatrix(self, matrix, target):
+        ls = list(itertools.chain(*matrix))
+        return ls and ls[bisect.bisect(ls, target) - 1] == target or False
 ```
 
 
@@ -2713,7 +3010,23 @@ Output: [0,1,2]
 ```
 
 ```python
-
+class Solution:
+    def sortColors(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: void Do not return anything, modify nums in-place instead.
+        """
+        red, white, blue = 0, 0, len(nums)-1
+        while white <= blue:
+            if nums[white] == 0:
+                nums[red], nums[white] = nums[white], nums[red]
+                white += 1
+                red += 1
+            elif nums[white] == 1:
+                white += 1
+            else:
+                nums[white], nums[blue] = nums[blue], nums[white]
+                blue -= 1
 ```
 
 
@@ -2743,7 +3056,30 @@ Since the largest window of s only has one 'a', return empty string.
 ```
 
 ```python
-
+class Solution:
+    def minWindow(self, s, t):
+        cnt_s, cnt_t, n, left, r = {}, {}, len(s), set(t), -1
+        for c in t:
+            cnt_t[c] = cnt_t.get(c, 0) + 1
+        L = l = 0
+        while left:
+            r += 1
+            if r >= n:
+                return ""
+            cnt_s[s[r]] = cnt_s.get(s[r], 0) + 1
+            if s[r] in cnt_t and cnt_s[s[r]] == cnt_t[s[r]]:
+                left.discard(s[r])
+        R = r
+        cnt_s[s[r]] -= 1
+        while l < r < n:
+            cnt_s[s[r]] = cnt_s.get(s[r], 0) + 1
+            while s[l] not in cnt_t or cnt_s[s[l]] > cnt_t[s[l]]:
+                cnt_s[s[l]] -= 1
+                l += 1
+            if r - l < R - L:
+                L, R = l, r
+            r += 1   
+        return s[L: R + 1]
 ```
 
 
@@ -2768,7 +3104,12 @@ Explanation: There is 1 choose 1 = 1 total combination.
 ```
 
 ```python
-
+class Solution:
+    def combine(self, n: int, k: int) -> List[List[int]]:
+        bfs = [[]]
+        for num in range(1, n + 1):
+            bfs += [arr + [num] for arr in bfs if len(arr) < k]
+        return [arr for arr in bfs if len(arr) == k]
 ```
 
 
@@ -2790,7 +3131,16 @@ Output: [[],[0]]
 ```
 
 ```python
-
+class Solution:
+    def subsets(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[List[int]]
+        """
+        res = [[]]
+        for num in nums: 
+            res += [item+[num] for item in res]
+        return res
 ```
 
 
@@ -2813,7 +3163,17 @@ Output: true
 ```
 
 ```python
-
+class Solution:
+    def exist(self, board, word):
+        m, n, o = len(board), len(board and board[0]), len(word)
+        def explore(i, j, k, q):
+            for x, y in ((i - 1, j), (i, j - 1), (i + 1, j), (i, j + 1)):
+                if k>=o or (0<=x<m and 0<=y<n and board[x][y]==word[k] and (x,y) not in q and explore(x,y,k+1,q|{(x,y)})): return True
+            return False
+        for i in range(m):
+            for j in range(n):
+                if board[i][j] == word[0] and explore(i, j, 1, {(i, j)}): return True
+        return False
 ```
 
 
@@ -2858,7 +3218,14 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 ```
 
 ```python
-
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        i = 2
+        for j in range(2, len(nums)):
+            if nums[i - 2] != nums[j]:
+                nums[i] = nums[j]
+                i += 1
+        return min(i, len(nums))
 ```
 
 
@@ -2884,7 +3251,22 @@ Output: false
 ```
 
 ```python
-
+class Solution:
+    def search(self, nums, target):
+        l, r, n = 0, len(nums) - 1, len(nums)
+        while l <= r:
+            while l + 1 < n and nums[l + 1] == nums[l]: 
+                l += 1
+            while r > 0 and nums[r] == nums[r - 1]: 
+                r -= 1
+            mid = (l + r) // 2
+            if nums[mid] == target: 
+                return True
+            elif sum((target < nums[l], nums[l] <= nums[mid], nums[mid] < target)) == 2: 
+                l = mid + 1
+            else: 
+                r = mid - 1
+        return False
 ```
 
 
@@ -2905,7 +3287,28 @@ Output: [2,3]
 ```
 
 ```python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
 
+class Solution:
+    def deleteDuplicates(self, head):
+        dummy_left, dummy_left.next = ListNode(0), head
+        prev, prev_num = None, dummy_left
+        while head:
+            if prev and prev.val != head.val: 
+                prev_num = prev
+            if prev and prev.val == head.val:
+                while head and head.next and head.next.val == head.val: 
+                    head = head.next
+                head = head.next
+                prev_num.next = head
+            prev = head
+            if head: 
+                head = head.next
+        return dummy_left.next
 ```
 
 
@@ -2926,7 +3329,14 @@ Output: [1,2,3]
 ```
 
 ```python
-
+class Solution:
+    def deleteDuplicates(self, head):
+        cur = root = head
+        while head:
+            if head.val != cur.val:
+                cur.next = cur = head
+            head = cur.next = head.next
+        return root
 ```
 
 
@@ -2949,7 +3359,19 @@ Output: 4
 ```
 
 ```python
-
+class Solution:
+    def largestRectangleArea(self, heights):
+        heights.append(0)
+        stack = [-1]
+        ans = 0
+        for i in range(len(heights)):
+            while heights[i] < heights[stack[-1]]:
+                h = heights[stack.pop()]
+                w = i - stack[-1] - 1
+                ans = max(ans, h * w)
+            stack.append(i)
+        heights.pop()
+        return ans
 ```
 
 
@@ -2974,7 +3396,26 @@ Output: 1
 ```
 
 ```python
-
+class Solution:
+    def maximalRectangle(self, matrix):
+        res, m, n = 0, len(matrix), len(matrix and matrix[0])
+        for i in range(m):
+            for j in range(n):
+                if matrix[i][j] != "0":
+                    if j > 0 and matrix[i][j - 1] != "0":
+                        matrix[i][j] = matrix[i][j - 1] + 1
+                    else:
+                        matrix[i][j] = 1
+                    mn, sm, k = matrix[i][j], 0, i + 1
+                    while k > 0 and matrix[k - 1][j] != "0":
+                        if matrix[k - 1][j] < mn:
+                            sm, mn = (i - k + 2) * matrix[k - 1][j], matrix[k - 1][j]
+                        else:
+                            sm += mn
+                        if sm > res:
+                            res = sm
+                        k -= 1
+        return res
 ```
 
 
@@ -2996,7 +3437,18 @@ Output: [1,2]
 ```
 
 ```python
-
+class Solution:
+    def partition(self, head, x):
+        lessHead = less = ListNode(-1)
+        greatHead = great = ListNode(-1)
+        while head:
+            if head.val < x:
+                less.next = less = head
+            else:
+                great.next = great = head
+            head = head.next
+        less.next, great.next = greatHead.next, None
+        return lessHead.next
 ```
 
 
@@ -3036,7 +3488,19 @@ Output: true
 ```
 
 ```python
-
+class Solution:
+    def isScramble(self, s1, s2):
+        n, m = len(s1), len(s2)
+        if n != m or sorted(s1) != sorted(s2):
+            return False
+        if n < 4 or s1 == s2:
+            return True
+        f = self.isScramble
+        for i in range(1, n):
+            if f(s1[:i], s2[:i]) and f(s1[i:], s2[i:]) or \u005C
+               f(s1[:i], s2[-i:]) and f(s1[i:], s2[:-i]):
+                return True
+        return False
 ```
 
 
@@ -3071,7 +3535,26 @@ Note that because m = 0, there are no elements in nums1. The 0 is only there to 
 ```
 
 ```python
+class Solution:
+    def merge(self, nums1, m, nums2, n):
+        """
+        :type nums1: List[int]
+        :type m: int
+        :type nums2: List[int]
+        :type n: int
+        :rtype: void Do not return anything, modify nums1 in-place instead.
+        """
+        while m > 0 and n > 0:
+            if nums1[m-1] >= nums2[n-1]:
+                nums1[m+n-1] = nums1[m-1]
+                m -= 1
+            else:
+                nums1[m+n-1] = nums2[n-1]
+                n -= 1
+        if n > 0:
+            nums1[:n] = nums2[:n]
 
+                
 ```
 
 
@@ -3109,7 +3592,13 @@ Output: [0,1]
 ```
 
 ```python
-
+class Solution:
+    def grayCode(self, n: int) -> List[int]:
+        results = [0]
+        for i in range(n): 
+            results += [x + pow(2, i) for x in reversed(results)]
+        return results
+        
 ```
 
 
@@ -3131,7 +3620,21 @@ Output: [[],[0]]
 ```
 
 ```python
-
+class Solution:
+    def subsetsWithDup(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[List[int]]
+        """
+        from itertools import combinations as cb
+        res, dic = [], set()
+        for i in range(len(nums) + 1):
+            for item in cb(nums, i):
+                item = tuple(sorted(item))
+                if item not in dic:
+                    dic.add(item)
+                    res.append(item)
+        return res
 ```
 
 
@@ -3172,7 +3675,14 @@ Explanation: "06" cannot be mapped to "F" because of the leading zero ("6" is di
 ```
 
 ```python
-
+class Solution:
+    def numDecodings(self, s):
+        if s[0] == "0": return 0
+        dp1 = dp2 = 1
+        for i in range(1, len(s)):
+            if s[i] == "0" and (s[i - 1] == "0" or s[i - 1] >= "3"): return 0
+            dp1, dp2 = [dp2, dp1] if s[i] == "0" else [dp2, dp2 + dp1] if "10" <= s[i -1: i + 1] <= "26" else [dp2, dp2]
+        return dp2  
 ```
 
 
@@ -3193,7 +3703,24 @@ Output: [5]
 ```
 
 ```python
-
+class Solution:
+    def reverseBetween(self, head, m, n):
+        dummy_left, dummy_left.next, i = ListNode(0), head, 1
+        prev = dummy_left
+        while head:
+            latter = head.next
+            if m == n: 
+                break
+            if i == m: 
+                head_left, right = prev, head
+            if i == n: 
+                head_right, left = head.next, head
+            if m < i <= n: 
+                head.next = prev
+            prev, head, i = head, latter, i+1
+        if m != n: 
+            head_left.next, right.next = left, head_right
+        return dummy_left.next
 ```
 
 
@@ -3216,7 +3743,20 @@ Output: ["1.0.10.23","1.0.102.3","10.1.0.23","10.10.2.3","101.0.2.3"]
 ```
 
 ```python
-
+class Solution:
+    def restoreIpAddresses(self, s: str) -> List[str]:
+        if len(s) > 12: return []
+        bfs = [(0, '')]
+        for c in s:
+            new = []
+            c = int(c)
+            for cur, st in bfs:
+                if cur * 10 + c <= 255 and (st[-1:] != '0' or cur):
+                    new.append((cur * 10 + c, st + str(c)))
+                if st:
+                    new.append((c, st + '.' + str(c)))
+            bfs = new
+        return [st for cur, st in bfs if st.count('.') == 3]
 ```
 
 
@@ -3241,7 +3781,23 @@ Output: [1]
 ```
 
 ```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
 
+class Solution:
+    def inorderTraversal(self, root: TreeNode) -> List[int]:
+        self.res = []
+        def dfs(node):
+            if not node: return
+            dfs(node.left)
+            self.res.append(node.val)
+            dfs(node.right)
+        dfs(root)
+        return self.res
 ```
 
 
@@ -3262,7 +3818,30 @@ Output: [[1]]
 ```
 
 ```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
 
+class Solution:
+    def generateTrees(self, n: int) -> List[TreeNode]:
+        def dfs(l, r):
+            if r < l: return [None]
+            arr = []
+            for m in range(l, r + 1):
+                left = dfs(l, m - 1)
+                right = dfs(m + 1, r)
+                for lNode in left:
+                    for rNode in right:
+                        new = TreeNode(m)
+                        new.left = lNode
+                        new.right = rNode
+                        arr.append(new)
+            return arr
+        res = dfs(1, n)
+        return [] if res == [None] else res
 ```
 
 
@@ -3283,7 +3862,16 @@ Output: 1
 ```
 
 ```python
-
+class Solution:
+    def numTrees(self, n):
+        if n <= 1:
+            return 1
+        catalan = [0] * (n + 1)
+        catalan[0] = catalan[1] = 1
+        for i in range(2, n + 1):
+            for j in range(i):
+                catalan[i] += catalan[j] * catalan[i - j - 1]
+        return catalan[n]
 ```
 
 
@@ -3322,7 +3910,15 @@ Output: true
 ```
 
 ```python
-
+class Solution:
+    def isInterleave(self, s1, s2, s3):
+        def dfs(i, j, k):
+            if (i, j, k) not in memo:
+                memo[(i, j, k)] = k>=l3 or (i<l1 and s3[k]==s1[i] and dfs(i+1,j,k+1)) or (j<l2 and s3[k]==s2[j] and dfs(i,j+1,k+1))
+            return memo[(i, j, k)]
+        l1, l2, l3, memo = len(s1), len(s2), len(s3), {}
+        if l3 != l1 + l2: return False
+        return dfs(0, 0, 0)
 ```
 
 
@@ -3351,7 +3947,24 @@ Explanation: The root node's value is 5 but its right child's value is 4.
 ```
 
 ```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
 
+class Solution:
+    def isValidBST(self, root):
+        """
+        :type root: TreeNode
+        :rtype: bool
+        """
+        def validate(node, mn, mx):
+            if not node: return True
+            if node.val<mn or node.val>mx: return False
+            return validate(node.left,mn,node.val-1) and validate(node.right,node.val+1,mx)
+        return validate(root, -float("inf"),float("inf"))
 ```
 
 
@@ -3376,7 +3989,23 @@ Explanation: 2 cannot be in the right subtree of 3 because 2 < 3. Swapping 2 and
 ```
 
 ```python
-
+class Solution:
+    def recoverTree(self, root):
+        def inorder(node):
+            if node.left:
+                yield from inorder(node.left)
+            yield node
+            if node.right:
+                yield from inorder(node.right)
+        swap1 = swap2 = smaller = None
+        for node in inorder(root):   
+            if smaller and smaller.val > node.val:
+                if not swap1:  
+                    swap1 = smaller
+                swap2 = node      
+            smaller = node
+        if swap1:
+            swap1.val, swap2.val = swap2.val, swap1.val
 ```
 
 
@@ -3404,7 +4033,9 @@ Output: false
 ```
 
 ```python
-
+class Solution:
+    def isSameTree(self, p, q):
+        return p == q if not p or not q else p.val == q.val and self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
 ```
 
 
